@@ -12,7 +12,7 @@
         android:layout_height="68dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Enter ID to View"
+        android:hint="Enter ID to View"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
