@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 public class display extends AppCompatActivity {
 
     private static  final String TAG = "display";
-    String username;
+    public static  String userName;
     TextView itemname,itemid,itemavailability,itembrand;
     Button view,delete,update;
     DatabaseReference dbRef;
@@ -34,8 +34,8 @@ public class display extends AppCompatActivity {
         setContentView(R.layout.activity_display);
 
         Intent intent = getIntent();
-        username = intent.getStringExtra(viewitem.userName);
-        Log.i(TAG, "username: " + username);
+        userName = intent.getStringExtra(viewitem.userName);
+        Log.i(TAG, "username: " + userName);
 
         itemname = findViewById(R.id.itemName);
         itembrand = findViewById(R.id.name);
@@ -45,13 +45,13 @@ public class display extends AppCompatActivity {
         update = findViewById(R.id.update2);
 
 
-        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("ItemAdd").child(username);
+        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("ItemAdd").child(userName);
         readRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Log.i(TAG, "username" + dataSnapshot.child("username").getValue());
-                Log.i(TAG, "itembrand" + dataSnapshot.child("itembrand").getValue());
-                Log.i(TAG, "itemid" + dataSnapshot.child("itemid").getValue());
+               Log.i(TAG, "username" + dataSnapshot.child("username").getValue());
+               Log.i(TAG, "itembrand" + dataSnapshot.child("itembrand").getValue());
+               Log.i(TAG, "itemid" + dataSnapshot.child("itemid").getValue());
                 Log.i(TAG, "itemavailability" + dataSnapshot.child("itemavailability").getValue());
                 if (dataSnapshot.hasChildren()) {
                     itemname.setText(dataSnapshot.child("itemid").getValue().toString());
@@ -71,12 +71,12 @@ public class display extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Delete
-                DatabaseReference delRef = FirebaseDatabase.getInstance().getReference().child("ItemAdd").child(username);
+                DatabaseReference delRef = FirebaseDatabase.getInstance().getReference().child("ItemAdd").child(userName);
                 delRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.hasChild("username")) {
-                            dbRef = FirebaseDatabase.getInstance().getReference().child("ItemAdd").child(username);
+                        if (dataSnapshot.hasChild("itemid")) {
+                            dbRef = FirebaseDatabase.getInstance().getReference().child("ItemAdd").child(userName);
                             dbRef.removeValue();
                             Toast.makeText(getApplicationContext(), "Data Deleted Successfully", Toast.LENGTH_SHORT).show();
                         } else
@@ -98,18 +98,18 @@ public class display extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Update
-                DatabaseReference upRef = FirebaseDatabase.getInstance().getReference().child("ItemAdd").child(username);
+                DatabaseReference upRef = FirebaseDatabase.getInstance().getReference().child("ItemAdd").child(userName);
                 upRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.hasChild("username")) {
+                        if (dataSnapshot.hasChild(userName)) {
                             try {
                                 iadd.setItemid(itemid.getText().toString().trim());
                                 iadd.setItembrand(itembrand.getText().toString().trim());
                                 iadd.setItemavailability(itemavailability.getText().toString().trim());
                                 iadd.setItemmodel(itemname.getText().toString().trim());
 
-                                dbRef = FirebaseDatabase.getInstance().getReference().child("ItemAdd").child(username);
+                                dbRef = FirebaseDatabase.getInstance().getReference().child("ItemAdd").child(userName);
                                 dbRef.setValue(iadd);
 
                                 Toast.makeText(getApplicationContext(), "Data Updated Successfully", Toast.LENGTH_SHORT).show();

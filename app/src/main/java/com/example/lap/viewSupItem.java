@@ -12,7 +12,7 @@ import android.widget.EditText;
 public class viewSupItem extends AppCompatActivity {
     private static final String TAG = "viewSupItem";
     Button btnspassing;
-    public static  String cusid;
+    public static  String customer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,8 @@ public class viewSupItem extends AppCompatActivity {
                 EditText editText = (EditText) findViewById(R.id.custoid);
                 String custoid = editText.getText().toString();
 
-                intent.putExtra("ID","123");
+             //   intent.putExtra("ID","123");
+                intent.putExtra(customer,custoid);
                 startActivity(intent);
     }
 });

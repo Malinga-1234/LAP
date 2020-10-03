@@ -53,13 +53,13 @@ public class item extends AppCompatActivity {
 
                 try {
                     if (TextUtils.isEmpty(itemid.getText().toString()))
-                        Toast.makeText(getApplicationContext(), "item id", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "itemid", Toast.LENGTH_SHORT).show();
                     else if (TextUtils.isEmpty(itemmodel.getText().toString()))
-                        Toast.makeText(getApplicationContext(), "item id", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "itemmodel:", Toast.LENGTH_SHORT).show();
                     else if (TextUtils.isEmpty(itembrand.getText().toString()))
-                        Toast.makeText(getApplicationContext(), "item brand", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "itembrand", Toast.LENGTH_SHORT).show();
                     else if (TextUtils.isEmpty(itemavailability.getText().toString()))
-                        Toast.makeText(getApplicationContext(), "item availability", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "itemavailability", Toast.LENGTH_SHORT).show();
 
                     else {
                         ita.setItemid(itemid.getText().toString().trim());
