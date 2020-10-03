@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "616197466406",
+    "firebase_url": "https://laps-a3b42.firebaseio.com",
+    "project_id": "laps-a3b42",
+    "storage_bucket": "laps-a3b42.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:616197466406:android:5f061211a5292aad6079e7",
+        "android_client_info": {
+          "package_name": "com.example.lap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "616197466406-ucsl099alruv1s1bviechc0mmutv2h5b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtKpQ-UwPvdvNYF6PAG0brwCq3DwVA3Zc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "616197466406-ucsl099alruv1s1bviechc0mmutv2h5b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
