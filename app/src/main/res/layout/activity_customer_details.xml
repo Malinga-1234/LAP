@@ -21,6 +21,8 @@
         android:hint="User Name"
         android:inputType="textPersonName"
         android:padding="10dp"
+        android:textAllCaps="false"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.363"
@@ -39,6 +41,7 @@
         android:hint="Email"
         android:inputType="textPersonName"
         android:padding="10dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.356"
@@ -57,6 +60,7 @@
         android:hint="Password"
         android:inputType="textPassword"
         android:padding="10dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.356"
@@ -75,12 +79,13 @@
         android:hint="Confirm Password"
         android:inputType="textPassword"
         android:padding="10dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.356"
+        app:layout_constraintHorizontal_bias="0.363"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.557" />
+        app:layout_constraintVertical_bias="0.533" />
 
     <EditText
         android:id="@+id/mobile"
@@ -93,12 +98,13 @@
         android:hint="Mobile"
         android:inputType="phone"
         android:padding="10dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.356"
+        app:layout_constraintHorizontal_bias="0.363"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.687" />
+        app:layout_constraintVertical_bias="0.644" />
 
     <EditText
         android:id="@+id/address"
@@ -111,12 +117,13 @@
         android:hint="Address"
         android:inputType="textPostalAddress"
         android:padding="10dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.363"
+        app:layout_constraintHorizontal_bias="0.356"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.803" />
+        app:layout_constraintVertical_bias="0.744" />
 
     <TextView
         android:id="@+id/textView5"
@@ -158,7 +165,7 @@
         app:layout_constraintHorizontal_bias="0.173"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.94" />
+        app:layout_constraintVertical_bias="0.953" />
 
     <Button
         android:id="@+id/button2"

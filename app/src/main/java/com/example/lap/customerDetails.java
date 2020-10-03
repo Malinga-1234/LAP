@@ -41,10 +41,10 @@ public class customerDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_details);
 
-        name = findViewById(R.id.name);
+       // name = findViewById(R.id.name);
         email = findViewById(R.id.email);
-        // pwd = findViewById(R.id.mobile);
-        //  cpwd = findViewById(R.id.u);
+       // pwd = findViewById(R.id.mobile);
+       // cpwd = findViewById(R.id.itembrand);
         mobile = findViewById(R.id.mobile);
         address = findViewById(R.id.address);
         Delete = findViewById(R.id.button11);
@@ -86,8 +86,8 @@ public class customerDetails extends AppCompatActivity {
                 if (dataSnapshot.hasChildren()) {
 
                     email.setText(dataSnapshot.child("email").getValue().toString());
-                    //  pwd.setText(dataSnapshot.child("pwd").getValue().toString());
-                    //   cpwd.setText(dataSnapshot.child("cpwd").getValue().toString());
+                     //pwd.setText(dataSnapshot.child("pwd").getValue().toString());
+                     // cpwd.setText(dataSnapshot.child("cpwd").getValue().toString());
                     mobile.setText(dataSnapshot.child("mobile").getValue().toString());
                     address.setText(dataSnapshot.child("address").getValue().toString());
                 } else
