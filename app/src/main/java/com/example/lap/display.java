@@ -102,7 +102,7 @@ public class display extends AppCompatActivity {
                 upRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.hasChild(userName)) {
+                        if (dataSnapshot.hasChild("ItemAdd")) {
                             try {
                                 iadd.setItemid(itemid.getText().toString().trim());
                                 iadd.setItembrand(itembrand.getText().toString().trim());

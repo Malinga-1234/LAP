@@ -2,6 +2,7 @@ package com.example.lap;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -14,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Register extends AppCompatActivity {
     EditText name, email, pwd, cpwd, mobile, address;
-    Button Register;
+    Button Register, ViewBtnn;
     DatabaseReference dbRef;
     registercus ggg;
 
@@ -37,7 +38,7 @@ public class Register extends AppCompatActivity {
         cpwd = findViewById(R.id.itembrand);
         mobile = findViewById(R.id.mobile);
         address = findViewById(R.id.address);
-
+        ViewBtnn = findViewById(R.id.button);
         Register = findViewById(R.id.register);
 
         ggg = new registercus();
@@ -69,9 +70,12 @@ public class Register extends AppCompatActivity {
                         ggg.setMobile(mobile.getText().toString().trim());
                         ggg.setAddress(address.getText().toString().trim());
 
-                        dbRef.push().setValue(ggg);
-
+                        //dbRef.push().setValue(ggg);
+                        //m
+                        dbRef.child(name.getText().toString()).setValue(ggg);
+                        //m
                         Toast.makeText(getApplicationContext(), "data Saved Successfully", Toast.LENGTH_SHORT).show();
+
                         clearControls();
 
                     }
@@ -81,4 +85,19 @@ public class Register extends AppCompatActivity {
                 }
             }
         });
-    }}
+
+        ViewBtnn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                intent22();
+            }
+        });
+
+    }
+    //M
+    public void intent22(){
+        Intent intent2 = new Intent(this,viewRegister.class);
+        startActivity(intent2);
+    }
+    //M
+}
