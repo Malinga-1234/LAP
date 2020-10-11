@@ -42,7 +42,7 @@ public class dispalycustmer extends AppCompatActivity {
         address = findViewById(R.id.p5);
 
         delete = findViewById(R.id.button14);
-       // update = findViewById(R.id.update2);
+        update = findViewById(R.id.button15);
 
         DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("RegisterCus").child(custmername);
         readRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -67,6 +67,7 @@ public class dispalycustmer extends AppCompatActivity {
 
             }
         });
+        //delete
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,6 +94,41 @@ public class dispalycustmer extends AppCompatActivity {
 
             }
 
+        });
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //update
+                DatabaseReference upRef = FirebaseDatabase.getInstance().getReference().child("RegisterCus").child(custmername);
+                upRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.hasChild(custmername)) {
+                            try {
+                                regview.setUser_name(user_name.getText().toString().trim());
+                                regview.setEmail(email.getText().toString().trim());
+                                regview.setPassword(password.getText().toString().trim());
+                                regview.setMobile(mobile.getText().toString().trim());
+                                regview.setMobile(address.getText().toString().trim());
+
+                                dbRef = FirebaseDatabase.getInstance().getReference().child("RegisterCus").child(custmername);
+                                dbRef.setValue(regview);
+
+                                Toast.makeText(getApplicationContext(), " Updated Successfully", Toast.LENGTH_SHORT).show();
+                            } catch (NumberFormatException e) {
+                                Toast.makeText(getApplicationContext(), "Invalid Item Code", Toast.LENGTH_SHORT).show();
+                            }
+                        } else
+                            Toast.makeText(getApplicationContext(), "No Source to Updated", Toast.LENGTH_SHORT).show();
+                    }
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
         });
         }
 

@@ -25,6 +25,7 @@ public class menu extends AppCompatActivity {
     private Button button5;
     private Button button6;
     private Button button8;
+    private Button payBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class menu extends AppCompatActivity {
         button5 = (Button) findViewById(R.id.customerview);
         button6 = (Button) findViewById(R.id.button6);
         button8 = (Button) findViewById(R.id.button8);
-
+        payBtn = (Button) findViewById(R.id.button7);
 
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,7 +56,12 @@ public class menu extends AppCompatActivity {
                 opensupadddetails();
             }
         });
-
+        payBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openPaymentActivity();
+            }
+        });
 
 
         button5.setOnClickListener(new View.OnClickListener() {
@@ -122,6 +128,11 @@ public class menu extends AppCompatActivity {
 
             public void opensupadddetails() {
                 Intent intent = new Intent(this, supadddetails.class);
+                startActivity(intent);
+            }
+
+            public void openPaymentActivity(){
+                Intent intent = new Intent(this, AddPayment.class);
                 startActivity(intent);
             }
 

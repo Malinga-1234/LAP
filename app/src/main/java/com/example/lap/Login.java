@@ -24,8 +24,8 @@ public class Login<FirebaseAuth> extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-//        RegisterCus = FirebaseAuth.getInstance();
-//        username = findViewById(R.id.itemmodel);
+   //    RegisterCus = FirebaseAuth.getInstance();
+//       username = findViewById(R.id.itemmodel);
 //        password = findViewById(R.id.editText8);
 //        login = findViewById(R.id.button3);
 //        login.setOnClickListener(new View.OnClickListener(){

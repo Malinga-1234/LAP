@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".dispalycustmer"></activity>
+        <activity android:name=".DisplayPayment"></activity>
+        <activity android:name=".SearchView" />
+        <activity android:name=".AddPayment" />
+        <activity android:name=".dispalycustmer" />
         <activity android:name=".viewRegister" />
         <activity android:name=".displaySup" />
         <activity android:name=".viewSupItem" />

@@ -110,12 +110,12 @@ public class displaySup extends AppCompatActivity {
                                 dbRef = FirebaseDatabase.getInstance().getReference().child("sup").child(customer);
                                 dbRef.setValue(supplieradd);
 
-                                Toast.makeText(getApplicationContext(), "Data Updated Successfully", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), " Updated Successfully", Toast.LENGTH_SHORT).show();
                             } catch (NumberFormatException e) {
                                 Toast.makeText(getApplicationContext(), "Invalid Item Code", Toast.LENGTH_SHORT).show();
                             }
                         } else
-                            Toast.makeText(getApplicationContext(), "No Source to Update", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Data Updated Successfully", Toast.LENGTH_SHORT).show();
                     }
 
 

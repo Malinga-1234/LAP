@@ -45,7 +45,7 @@ public class display extends AppCompatActivity {
         update = findViewById(R.id.update2);
 
 
-        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("ItemAdd").child(userName);
+        final DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("ItemAdd").child(userName);
         readRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -98,18 +98,21 @@ public class display extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Update
-                DatabaseReference upRef = FirebaseDatabase.getInstance().getReference().child("ItemAdd").child(userName);
-                upRef.addListenerForSingleValueEvent(new ValueEventListener() {
+             DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("ItemAdd").child(userName);
+                readRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.hasChild("ItemAdd")) {
+                        if (dataSnapshot.hasChild(userName)) {
                             try {
                                 iadd.setItemid(itemid.getText().toString().trim());
                                 iadd.setItembrand(itembrand.getText().toString().trim());
                                 iadd.setItemavailability(itemavailability.getText().toString().trim());
                                 iadd.setItemmodel(itemname.getText().toString().trim());
 
-                                dbRef = FirebaseDatabase.getInstance().getReference().child("ItemAdd").child(userName);
+                                DatabaseReference upRef = FirebaseDatabase.getInstance().getReference().child("ItemAdd").child(userName);
+                                upRef.setValue(iadd);
+
+                               dbRef = FirebaseDatabase.getInstance().getReference().child("ItemAdd").child(userName);
                                 dbRef.setValue(iadd);
 
                                 Toast.makeText(getApplicationContext(), "Data Updated Successfully", Toast.LENGTH_SHORT).show();
@@ -117,7 +120,7 @@ public class display extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), "Invalid Item Code", Toast.LENGTH_SHORT).show();
                             }
                         } else
-                            Toast.makeText(getApplicationContext(), "No Source to Update", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "No Source to Updated", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
