@@ -95,7 +95,7 @@ public class DisplayPayment extends AppCompatActivity {
                                 pm.setAmount(amnt.getText().toString().trim());
 
 
-                                dbref = FirebaseDatabase.getInstance().getReference().child("sup").child(searchKey);
+                                dbref = FirebaseDatabase.getInstance().getReference().child("Payment").child(searchKey);
                                 dbref.setValue(pm);
 
                                 Toast.makeText(getApplicationContext(), " Data Updated Successfully", Toast.LENGTH_SHORT).show();
